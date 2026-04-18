@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+    <style>
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+        input {
+            display: block;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Registration Form</h2>
+
+<form id="form">
+    <input type="text" id="name" placeholder="Enter Name">
+    <span id="nameError" class="error"></span>
+
+    <input type="text" id="email" placeholder="Enter Email">
+    <span id="emailError" class="error"></span>
+
+    <input type="password" id="password" placeholder="Enter Password">
+    <span id="passwordError" class="error"></span>
+
+    <button id="submitBtn" disabled>Submit</button>
+</form>
+
+<script>
+    var nameInput = document.getElementById("name");
+    var emailInput = document.getElementById("email");
+    var passwordInput = document.getElementById("password");
+    var submitBtn = document.getElementById("submitBtn");
+
+    function validateForm() {
+        var isValid = true;
+
+        // Name validation
+        if (nameInput.value.trim() === "") {
+            document.getElementById("nameError").innerText = "Name cannot be empty";
+            isValid = false;
+        } else {
+            document.getElementById("nameError").innerText = "";
+        }
+
+        // Email validation (simple regex)
+        var emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+        if (!emailInput.value.match(emailPattern)) {
+            document.getElementById("emailError").innerText = "Invalid email format";
+            isValid = false;
+        } else {
+            document.getElementById("emailError").innerText = "";
+        }
+
+        // Password validation
+        if (passwordInput.value.length < 6) {
+            document.getElementById("passwordError").innerText = "Password must be at least 6 characters";
+            isValid = false;
+        } else {
+            document.getElementById("passwordError").innerText = "";
+        }
+
+        // Enable/Disable button
+        submitBtn.disabled = !isValid;
+    }
+
+    // Real-time validation
+    nameInput.addEventListener("input", validateForm);
+    emailInput.addEventListener("input", validateForm);
+    passwordInput.addEventListener("input", validateForm);
+</script>
+
+</body>
+</html>
