@@ -9,13 +9,16 @@ This project is a simple Registration Form built using HTML, CSS, and JavaScript
 ✅ Real-time input validation
 ✅ Submit button enabled only when all fields are valid
 ✅ Simple and clean UI design
+
 🛠️ Technologies Used
 HTML5
 CSS3
 JavaScript (Vanilla JS)
+
 📂 Project Structure
 project-folder/
 │── index.html
+
 ⚙️ How It Works
 The form listens to user input using addEventListener
 Each field is validated dynamically:
@@ -29,6 +32,7 @@ Otherwise:
 ▶️ How to Run
 Download or clone the repository
 Open the index.html file in any browser
+
 📸 Preview
 
 A simple form with:
@@ -36,6 +40,7 @@ A simple form with:
 Input fields for Name, Email, Password
 Inline error messages
 Disabled submit button until valid
+
 💡 Future Improvements
 Add confirm password field
 Improve email validation pattern
